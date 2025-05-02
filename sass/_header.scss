@@ -1,0 +1,129 @@
+.header-title-wrap {
+    width: 100%;
+    height: 100vh;
+    @include flex-center;
+
+}
+
+.header-title {
+    width: 100%;
+    max-width: 250rem;
+    height: 100%
+}
+
+.title-wrap {
+    @include full-size;
+    @include flex-center-bottom;
+
+}
+
+.title-img-wrap {
+    position: relative;
+    width: 45%;
+    height: 100%;
+    background-image: url('../images/desert-1920.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+
+    // img {
+    //     width: 100%;
+    // }
+
+}
+
+.title-img-wrap::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $color-primary;
+    transition: .5s 1.2s ease-in-out;
+}
+
+.title-img-wrap-active::after {
+
+    width: 0;
+
+}
+
+.title-txt {
+    width: 100%;
+    // height: 100%;
+    padding: 0 0 8rem 8rem;
+
+}
+
+.border-container {
+    width: 10%;
+    height: 6rem;
+    opacity: 0;
+    background-color: $color-secondary;
+    margin: 5rem 0;
+    transition: .5s 1.5s ease-in-out;
+
+}
+
+.border-container-active {
+
+    width: 80%;
+    opacity: 1;
+
+
+}
+
+@media (max-width: 1200px) {
+
+
+
+
+    .border-container {
+
+        height: 4rem;
+        margin: 4rem 0;
+
+
+    }
+
+    .title-txt {
+        // width: 100%;
+        // height: 70%;
+        padding: 8rem 1rem 3rem 3rem;
+
+    }
+}
+
+@media (max-width: 768px) {
+    .title-wrap {
+
+        @include flex-center;
+        flex-direction: column-reverse;
+        margin-top: 3rem;
+
+    }
+
+    .title-img-wrap {
+
+        width: 100%;
+
+    }
+
+    .border-container {
+
+        height: 2rem;
+        margin: 1rem 0;
+
+
+    }
+
+    .title-txt {
+        // width: 100%;
+        // height: 70%;
+        padding: 8rem 1rem 3rem 1rem;
+
+    }
+}
+
+// @media (max-width: 768px) {}
