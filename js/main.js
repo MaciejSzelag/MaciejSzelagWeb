@@ -21,7 +21,7 @@ function addClassesSequentially(selector, classes, delay, initialDelay = 0) {
 }
 const burger = document.querySelector('.nav-burger');
 const navList = document.querySelector('.nav-list');
-const elementLi = document.querySelectorAll('.li-animatioan');
+// const elementLi = document.querySelectorAll('.li-animatioan');
 // navigation
 burger.addEventListener('click', () => {
     burger.classList.toggle('nav-burger-avtive');
@@ -32,7 +32,14 @@ burger.addEventListener('click', () => {
 
 })
 
+const navBtn = document.querySelectorAll(".li-nav");
 
+navBtn.forEach(item => {
+    item.addEventListener("click", () => {
+        burger.classList.toggle('nav-burger-avtive');
+        navList.classList.toggle('nav-list-active');
+    })
+})
 
 // Dodaj klasę 'dowolna' do wszystkich np.animation-enter co 200ms
 
@@ -91,3 +98,5 @@ function animateOnScroll(selector, classes, delay, initialDelay = 0, offset = 0.
 // Przykład użycia:
 // animateOnScroll('.my-element', ['animate-class'], 200, 0);
 animateOnScroll('.animation-item', ['animation-item-active'], 200, 0, 0.6);
+animateOnScroll('.section-about-cover', ['section-about-cover-active'], 200, 1000, 0.6);
+
