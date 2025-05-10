@@ -1,0 +1,129 @@
+.sub-header-wrap {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    background-color: $color-secondary;
+    overflow: hidden;
+
+}
+
+.bg-img-head,
+.page-title {
+    position: absolute;
+    left: 50%;
+}
+
+.page-title {
+    width: 100%;
+    bottom: 20%;
+    transform: translate(-50%, 0);
+    z-index: 0;
+
+    h1 {
+        font-size: 21rem;
+        text-align: center;
+        // background-color: green;
+        color: $color-primary;
+        text-shadow: 0 0 2rem $color-secondary;
+    }
+}
+
+.bg-img-head {
+    // position: relative;
+    width: 70%;
+    height: 100%;
+    bottom: -2rem;
+    transform: translateX(-50%);
+
+    border-top-left-radius: 40%;
+    border-top-right-radius: 40%;
+    background-image: url(../images/maciej-szelag.PNG);
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    // filter: drop-shadow(0 -1rem 1rem rgb(253, 253, 253));
+    // border-right: .2rem solid $color-primary;
+    // border-left: .2rem solid $color-primary;
+    // box-shadow: inset 0 1rem 1rem .1rem rgb(185, 185, 185);
+    filter: drop-shadow(0 0 3rem rgb(255, 255, 255));
+    opacity: .5;
+    // z-index: 2;
+}
+
+
+@media (max-width:1400px) {
+    .bg-img-head {
+        width: 80%;
+    }
+}
+
+@media (max-width:1200px) {}
+
+@media (max-width:1024px) {
+    .sub-header-wrap {
+        height: 60vh;
+    }
+
+    .page-title {
+
+        bottom: 50%;
+
+        h1 {
+            font-size: 16rem;
+        }
+
+    }
+
+    .bg-img-head {
+        width: 90%;
+        height: 70%;
+        bottom: 0;
+        // border-radius: 0;
+        // box-shadow: none;
+    }
+}
+
+@media (max-width:992px) {
+    .bg-img-head {
+        width: 100%;
+        bottom: -18%;
+
+    }
+}
+
+@media (max-width:768px) {
+    .page-title {
+
+        bottom: 60%;
+
+        h1 {
+            font-size: 12rem;
+        }
+
+    }
+
+    .bg-img-head {
+        width: 100%;
+        bottom: -5%;
+
+    }
+}
+
+@media (max-width:576px) {
+    .page-title {
+
+        bottom: 70%;
+
+        h1 {
+            font-size: 6rem;
+        }
+
+    }
+
+    .bg-img-head {
+        width: 100%;
+        bottom: 0;
+
+    }
+}

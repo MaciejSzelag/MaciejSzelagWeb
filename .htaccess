@@ -1,0 +1,25 @@
+RewriteEngine On
+
+# Redirect HTTP -> HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Redirect www -> non-www
+RewriteCond %{HTTP_HOST} ^www\.maciejszelag\.co\.uk [NC]
+RewriteRule ^(.*)$ https://maciejszelag.co.uk/$1 [L,R=301]
+
+# Redirect duplicate slashes (// -> /)
+RewriteCond %{REQUEST_URI} ^(.*)/{2,}(.*)$
+RewriteRule ^ %1/%2 [L,R=301]
+
+# Custom 404 Error Page
+ErrorDocument 404 /404.php
+
+# Blokada plików konfiguracyjnych
+<Files "config/config.php">
+    Require all denied
+</Files>
+
+# Blokada botów (opcjonalne)
+SetEnvIfNoCase User-Agent "AhrefsBot|MJ12bot" bad_bot
+Deny from env=bad_bot

@@ -97,6 +97,6 @@ function animateOnScroll(selector, classes, delay, initialDelay = 0, offset = 0.
 
 // Przykład użycia:
 // animateOnScroll('.my-element', ['animate-class'], 200, 0);
-animateOnScroll('.animation-item', ['animation-item-active'], 200, 0, 0.6);
-animateOnScroll('.section-about-cover', ['section-about-cover-active'], 200, 1000, 0.6);
+animateOnScroll('.animation-item', ['animation-item-active'], 200, 0, 0.9);
+animateOnScroll('.section-about-cover', ['section-about-cover-active'], 200, 1000, 0.9);
 

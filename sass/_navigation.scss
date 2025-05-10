@@ -10,12 +10,15 @@ nav {
     // background-color: $color-primary;
     // box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: 1s 1s cubic-bezier(0.67, -0.33, 0.38, 1.19);
-    ;
+
     z-index: 1000;
+
+
 }
 
 .nav-active {
     top: 0;
+
 }
 
 nav::after,
@@ -28,6 +31,7 @@ nav::before {
     background-color: $color-secondary;
     // animation: fly-in 1s ease-in-out 1;
     // filter: drop-shadow(0 .5rem .1rem rgb(0, 0, 0));
+
 }
 
 nav::after {
@@ -42,6 +46,7 @@ nav::before {
 
 .nav-logo img {
     max-height: 50px;
+
 }
 
 .nav-burger {
@@ -54,6 +59,9 @@ nav::before {
     // background-color: grey;
     overflow: hidden;
 
+
+
+
 }
 
 .burger,
@@ -62,12 +70,16 @@ nav::before {
     @include full-size;
     @include flex-center;
     transition: all 0.3s ease-in-out;
+
+
+
 }
 
 
 .burger {
     position: relative;
     padding: 0 1rem;
+
 }
 
 .burger::after,
@@ -92,9 +104,10 @@ nav::before {
 
 .nav-burger:hover {
     .burger {
-        color: rgb(80, 43, 0);
+        // color: rgb(80, 43, 0);
         animation: letter-spacing-menu .5s ease-in-out 1;
         // transform: translateY(-100%);
+
     }
 
     .burger::before {
@@ -106,8 +119,10 @@ nav::before {
 .nav-burger-avtive {
     transition: all 0.3s ease-in-out;
 
+
     .burger {
         transform: translateY(-100%);
+
     }
 }
 
@@ -123,6 +138,7 @@ nav::before {
     align-items: flex-end;
 
     background-color: $color-secondary;
+    // background-color: $color-primary;
     transition: all 1s ease-in-out;
     overflow: hidden;
 }

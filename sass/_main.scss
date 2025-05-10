@@ -88,12 +88,12 @@ h2 {
 
 .v-big-line-height {
     font-size: 13rem;
-    line-height: 9rem;
+    // line-height: 12rem;
 }
 
 .big-line-height {
-    font-size: 10rem;
-    line-height: 7rem;
+    font-size: 5rem;
+    // line-height: 5rem;
 }
 
 main {
@@ -119,7 +119,7 @@ section {
 .hero-title {
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
     flex-direction: column;
     @include full-size;
     padding: 10rem 0;
@@ -129,7 +129,7 @@ section {
 .hero-title-h1 {
     font-size: 25rem;
     text-transform: uppercase;
-    line-height: 16rem;
+    // line-height: 16rem;
 }
 
 .flex-center {
@@ -138,16 +138,23 @@ section {
 
 .three-headlines {
     padding: 10rem 0;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
 .three-headlines-p {
-    font-size: 7rem;
+    font-size: 5rem;
     line-height: 5rem;
-    margin: 3rem 5rem;
+    // margin: 3rem 0;
     text-transform: uppercase;
     color: $color-primary;
     text-align: center;
+    padding: 0 5rem;
+}
+
+.middle-border {
+    border-left: .1rem solid $color-primary;
+    border-right: .1rem solid $color-primary;
+
 }
 
 
@@ -211,9 +218,42 @@ section {
     margin: 1rem 0;
 }
 
+
+
 .img-box {
     @include full-size;
-    // @include flex-center;
+    @include flex-center;
+    position: relative;
+
+
+    img {
+        position: relative;
+        width: 45%;
+        box-shadow: 0 0 6rem 1rem rgb(0, 0, 0);
+        border-radius: 2rem;
+        z-index: 2;
+    }
+}
+
+
+
+
+
+.blur-img-bg {
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: blur(15px);
+    background-position: center;
+    // background-position: 80%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 1;
+
+
 }
 
 .img-1 {
@@ -224,18 +264,22 @@ section {
     background-image: url(../images/office-1280.jpg);
 }
 
+
+
 .img-3 {
     background-image: url(../images/airplane-1280.jpg);
 
 }
 
-.img-box {
+.img-4 {
+    background-image: url(../images/Maciej-Szelag-work.jpg);
+    background-position: 100% 30%;
+    // height: 50vh;
 
-    background-position: center;
-    // background-position: 80%;
-    background-size: cover;
-    background-repeat: no-repeat;
+
 }
+
+
 
 
 .text-container {
@@ -334,15 +378,16 @@ section {
     justify-content: flex-end;
     align-items: flex-end;
     width: 100%;
-    padding: 3rem;
+    padding: 3rem 10rem 3rem;
     margin-top: 7rem;
 }
 
 .paragraph-about {
-    width: 60%;
+    width: 70%;
     text-align: right;
     font-size: 5rem;
     font-family: $font-secondary;
+    text-shadow: .1rem .1rem 1rem rgb(255, 255, 255);
 }
 
 .btn-wrap-about {
@@ -378,6 +423,54 @@ section {
     a:hover {
         background-color: $color-secondary;
         color: $color-primary;
+    }
+}
+
+.section-about-offer {
+    width: 100%;
+    height: auto;
+    padding: 5rem 20rem;
+    // background-color: $color-secondary;
+    // color: $color-primary;
+}
+
+.offer-title {
+    font-size: 8rem;
+    text-align: center;
+    margin: 5rem 0 8rem;
+}
+
+.offer-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 100%;
+    padding: 5rem;
+    font-size: 3rem;
+    font-family: $font-secondary;
+
+    h3 {
+        width: 40%;
+        font-size: 6rem;
+        padding-left: 3rem;
+        margin-bottom: 4rem;
+        border-left: .5rem solid $color-secondary;
+
+    }
+
+    ul {
+        padding-left: 3rem;
+        width: 50%;
+
+        li {
+            font-size: 3rem;
+            margin-bottom: 4rem;
+            list-style: none;
+
+            strong {
+                padding-right: 2rem;
+            }
+        }
     }
 }
 
@@ -440,11 +533,17 @@ section {
 }
 
 @media (max-width: 992px) {
+    .three-headlines {
+        padding: 5rem 0;
+        justify-content: center;
+    }
+
     .three-headlines-p {
         font-size: 4rem;
         line-height: 3.5rem;
         // margin: 2rem 0;
     }
+
 
     .content-wrapper {
         flex-direction: column;
@@ -494,6 +593,16 @@ section {
 
     .image-container {
         height: 50rem;
+    }
+
+    .img-box {
+
+        img {
+
+            width: 70%;
+            box-shadow: 0 0 5rem .5rem rgb(0, 0, 0);
+        }
+
     }
 
     .img-1 {
@@ -548,20 +657,50 @@ section {
 
     .three-headlines-p {
 
-        margin: 2rem 0;
+        padding: 3rem 0;
+    }
+
+    .middle-border {
+        border-left: none;
+        border-right: none;
+        border-top: .1rem solid $color-primary;
+        border-bottom: .1rem solid $color-primary;
+
+    }
+
+    .image-container-sm {
+        height: auto;
+        margin: 5rem 0 1rem;
+    }
+
+    .img-box-circle {
+        width: 100%;
+        height: 50rem;
+        // margin: 3rem 0;
+        // border-radius: 50%;
+        overflow: hidden;
+        // box-shadow: 0 0 1rem .5rem rgb(173, 173, 173);
+
+        img {
+
+            width: 100%;
+            // transform: translateY(10%);
+
+        }
+
     }
 }
 
 @media (max-width: 576px) {
-    // .v-big-line-height {
-    //     font-size: 5rem;
-    //     line-height: 3.5rem;
-    // }
+    .v-big-line-height {
+        font-size: 5rem;
+        line-height: 5.5rem;
+    }
 
-    // .big-line-height {
-    //     font-size: 4rem;
-    //     line-height: 2.8rem;
-    // }
+    .big-line-height {
+        font-size: 3rem;
+        line-height: 3.5rem;
+    }
 
     // .hero-title {
     //     height: 50%;
@@ -624,6 +763,7 @@ section {
     .paragraph-about {
         width: 100%;
         text-align: left;
+
         font-size: 2rem;
     }
 

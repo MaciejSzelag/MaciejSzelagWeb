@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soon | Maciej Szelag</title>
+    <style>
+        /* Import czcionek */
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Julius+Sans+One&display=swap');
+
+        /* Zmienne */
+        :root {
+            --font-primary: "Cormorant Garamond", serif;
+            --font-secondary: "Julius Sans One", sans-serif;
+            --font-weight-light: 300;
+            --font-weight-regular: 400;
+            --color-primary: rgb(233, 232, 232);
+            --color-secondary: rgb(61, 60, 68);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--color-secondary);
+            color: var(--color-primary);
+            font-family: var(--font-primary);
+            font-weight: var(--font-weight-light);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 600px;
+            padding: 2rem;
+        }
+
+        .logo {
+            font-family: var(--font-secondary);
+            font-size: 1.8rem;
+            letter-spacing: 3px;
+            margin-bottom: 3rem;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-family: var(--font-secondary);
+            font-size: 2.5rem;
+            margin: 0;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .decorative-line {
+            width: 100px;
+            height: 1px;
+            background-color: var(--color-primary);
+            margin: 2rem auto;
+            opacity: 0.5;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            font-weight: var(--font-weight-regular);
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .countdown-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .countdown-number {
+            font-family: var(--font-secondary);
+            font-size: 2rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .countdown-label {
+            font-size: 0.8rem;
+            opacity: 0.8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .social-link {
+            color: var(--color-primary);
+            font-size: 1.2rem;
+            transition: opacity 0.3s ease;
+        }
+
+        .social-link:hover {
+            opacity: 0.7;
+        }
+
+        .contact-btn {
+            color: var(--color-primary);
+            text-decoration: none;
+            border: 1px solid var(--color-primary);
+            padding: 0.8rem 1.5rem;
+            font-family: var(--font-secondary);
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        .contact-btn:hover {
+            background-color: var(--color-primary);
+            color: var(--color-secondary);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="logo">Maciej Szelag</div>
+
+        <h1>Soon</h1>
+        <div class="decorative-line"></div>
+
+        <p>I'm working on something special!</p>
+
+        <div class="countdown">
+            <div class="countdown-item">
+                <span class="countdown-number" id="days">00</span>
+                <span class="countdown-label">Days</span>
+            </div>
+            <div class="countdown-item">
+                <span class="countdown-number" id="hours">00</span>
+                <span class="countdown-label">Hours</span>
+            </div>
+            <div class="countdown-item">
+                <span class="countdown-number" id="minutes">00</span>
+                <span class="countdown-label">Minutes</span>
+            </div>
+            <div class="countdown-item">
+                <span class="countdown-number" id="seconds">00</span>
+                <span class="countdown-label">Seconds</span>
+            </div>
+        </div>
+
+        <div class="social-links">
+            <a href="https://www.instagram.com/mswebdesignuk/?hl=en" class="social-link">Instagram</a>
+            <a href="https://www.facebook.com/profile.php?id=61574904818271" class="social-link">Facebook</a>
+        </div>
+
+        <a href="mailto:webby.maciej@gmail.com" class="contact-btn">Contact me</a>
+    </div>
+
+    <script>
+        // Licznik odliczający do przyszłej daty (np. 1 stycznia 2025)
+        const countdownDate = new Date('May 16, 2025 00:00:00').getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = countdownDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    </script>
+</body>
+
+</html>
