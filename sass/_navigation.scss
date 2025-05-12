@@ -8,13 +8,19 @@ nav {
     align-items: center;
     padding: 1rem 20rem;
     // background-color: $color-primary;
-    // box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: 1s 1s cubic-bezier(0.67, -0.33, 0.38, 1.19);
+    // background-image: linear-gradient(45deg, $color-secondary, transparent, $color-primary);
+    // box-shadow: 0 .3rem 1rem .1rem rgba(34, 34, 34, 0.5);
+    transition: .5s cubic-bezier(0.67, -0.33, 0.38, 1.19);
 
     z-index: 1000;
 
 
 }
+
+// nav:hover {
+    //     transition-delay: 0 !important;
+    //     background-color: $color-primary;
+    // }
 
 .nav-active {
     top: 0;
@@ -58,6 +64,7 @@ nav::before {
     text-transform: uppercase;
     // background-color: grey;
     overflow: hidden;
+    text-shadow: 0 0 .5rem White;
 
 
 

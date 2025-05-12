@@ -101,6 +101,7 @@ main {
     // min-height: 100vh;
     @include flex-center;
     flex-direction: column;
+    overflow: hidden;
 }
 
 article {
@@ -177,8 +178,10 @@ section {
 .content-wrapper {
     display: flex;
     flex-wrap: wrap;
-    // gap: 2rem;
+
     align-items: center;
+    width: auto;
+    height: auto;
 }
 
 .image-container,
@@ -201,7 +204,8 @@ section {
 }
 
 .image-container {
-    height: 100vh;
+    height: 50vh;
+    min-height: 50vh;
 }
 
 .section-full-image {
@@ -288,6 +292,11 @@ section {
         font-size: 3rem;
         font-family: $font-secondary;
         width: 70%;
+    }
+
+    .primary-font {
+        font-family: $font-primary;
+        margin-bottom: 3rem;
     }
 }
 
@@ -426,6 +435,8 @@ section {
     }
 }
 
+
+
 .section-about-offer {
     width: 100%;
     height: auto;
@@ -454,13 +465,15 @@ section {
         font-size: 6rem;
         padding-left: 3rem;
         margin-bottom: 4rem;
-        border-left: .5rem solid $color-secondary;
-
+        border-left: .5rem solid $color-secondary
     }
 
     ul {
-        padding-left: 3rem;
+        padding: 3rem;
         width: 50%;
+        // box-shadow: 1.8rem 0 1.5rem .1rem rgba(128, 128, 128, 0.336);
+
+
 
         li {
             font-size: 3rem;
@@ -481,6 +494,12 @@ section {
         font-size: 5rem;
         line-height: 3.5rem;
         // margin: 2rem 0;
+    }
+
+    .section-about-offer {
+
+        padding: 5rem 5rem;
+
     }
 }
 
@@ -521,14 +540,119 @@ section {
         }
     }
 
+    .section-about-offer {
+
+        padding: 5rem 10rem;
+
+    }
+
+    .offer-title {
+        font-size: 6rem;
+        margin: 4rem 0;
+
+    }
+
+    .offer-content {
+        overflow: hidden;
+
+
+
+
+        h3 {
+            // width: 40%;
+            font-size: 4rem;
+            // padding-left: 3rem;
+            // margin-bottom: 4rem;
+            // border-left: .5rem solid $color-secondary
+        }
+
+        ul {
+            // padding: 3rem;
+            // width: 50%;
+
+
+
+
+            li {
+                font-size: 2rem;
+                // margin-bottom: 4rem;
+                // list-style: none;
+
+                // strong {
+                //     padding-right: 2rem;
+                // }
+            }
+        }
+    }
+
 }
 
 @media (max-width:1024px) {
+    section {
+        height: auto;
+    }
 
     .section-about-cover {
         height: 50%;
         opacity: .1;
 
+    }
+
+    .text-wrap {
+        .paragraph-about {
+            width: 80%;
+            font-size: 4rem;
+        }
+    }
+
+    .big-title {
+        font-size: 12rem;
+
+    }
+
+    .section-about-offer {
+
+        padding: 5rem 10rem;
+
+    }
+
+    // .offer-title {
+    //     font-size: 6rem;
+    //     margin: 4rem 0;
+
+    // }
+
+    .offer-content {
+        flex-direction: column;
+
+
+        h3,
+        ul {
+            width: 100%;
+        }
+
+        h3 {
+            // width: 40%;
+            font-size: 4rem;
+            // padding-left: 3rem;
+            // margin-bottom: 4rem;
+            // border-left: .5rem solid $color-secondary
+        }
+
+        ul {
+            // padding: 3rem;
+            // width: 50%;
+            padding-left: 0;
+
+
+
+
+            li {
+                font-size: 2rem;
+                padding-left: 2rem;
+                border-left: .2rem solid $color-secondary
+            }
+        }
     }
 }
 

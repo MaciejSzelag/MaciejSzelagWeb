@@ -21,7 +21,7 @@ function addClassesSequentially(selector, classes, delay, initialDelay = 0) {
 }
 const burger = document.querySelector('.nav-burger');
 const navList = document.querySelector('.nav-list');
-// const elementLi = document.querySelectorAll('.li-animatioan');
+const elementLi = document.querySelectorAll('.li-animatioan');
 // navigation
 burger.addEventListener('click', () => {
     burger.classList.toggle('nav-burger-avtive');
@@ -49,7 +49,7 @@ setTimeout(() => {
     addClassesSequentially('.title-img-wrap ', 'title-img-wrap-active', 100); // header img
     addClassesSequentially('.border-container ', 'border-container-active', 70); // header black container
     addClassesSequentially('nav', 'nav-active', 0); // navigation
-}, 1000);
+}, 3000);
 
 
 //scroll animation
