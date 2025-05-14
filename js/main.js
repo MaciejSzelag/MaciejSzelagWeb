@@ -100,3 +100,16 @@ function animateOnScroll(selector, classes, delay, initialDelay = 0, offset = 0.
 animateOnScroll('.animation-item', ['animation-item-active'], 200, 0, 0.9);
 animateOnScroll('.section-about-cover', ['section-about-cover-active'], 200, 1000, 0.9);
 
+document.addEventListener("DOMContentLoaded", function () {
+    setTimeout(function () {
+        const preloader = document.querySelector('.loader-wrap');
+        const content = document.querySelector('.loading');
+        preloader.style.opacity = '0';
+        preloader.style.transition = 'opacity 0.5s ease';
+
+        setTimeout(function () {
+            preloader.style.display = 'none';
+            content.style.display = 'block';
+        }, 500); // czas na zanik
+    }, 2500); // czas trwania preloadera
+});
