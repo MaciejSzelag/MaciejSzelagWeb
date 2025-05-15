@@ -20,6 +20,21 @@
     <meta name="description" content="Page not found - Maciej Szelag - Web Desiner ad Web Developer">
     <title>Page Not Found | 404</title>
     <link rel="canonical" href="https://maciejszelag.co.uk/" /> <!-- Points to homepage -->
+        <!-- Structured data for error page -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "404 Page Not Found",
+        "description": "Error page for BJJ Plymouth website",
+        "url": "https://maciejszelag.co.uk/404",
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "Maciej Szelag - Web Developer Web Designer",
+            "url": "https://maciejszelag.co.uk/"
+        }
+    }
+    </script>
     <style>
         /* Import czcionek */
         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Julius+Sans+One&display=swap');
@@ -98,21 +113,7 @@
             opacity: 0.5;
         }
     </style>
-    <!-- Structured data for error page -->
-    <!-- <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "404 Page Not Found",
-        "description": "Error page for BJJ Plymouth website",
-        "url": "https://maciejszelag.co.uk/404",
-        "isPartOf": {
-            "@type": "WebSite",
-            "name": "Maciej Szelag - Web Developer Web Designer",
-            "url": "https://maciejszelag.co.uk/"
-        }
-    }
-    </script> -->
+
 </head>
 
 <body>

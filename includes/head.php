@@ -1,5 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+    $homePage;
+    if (isset($homePage)) {
+        include 'config/config.php'; // Relatywna ścieżka do pliku konfiguracyjnego
+    } else {
+        include '../config/config.php'; // Relatywna ścieżka do pliku konfiguracyjnego
+    }
+?>
+
 
 <head>
     <meta charset="UTF-8">
@@ -13,13 +22,35 @@
     <meta name="author" content="Maciej Szelag">
     <meta name="robots" content="index, follow">
     <!-- Primary Meta Tags -->
-    <title>Maciej Szelag | Professional Web Design & Development in Plymouth, UK</title>
+    <title>
+        <?php echo 'Maciej Szelag |' . $title . '| Professional Web Design & Development in Plymouth, UK' ?? 'Maciej Szelag | Professional Web Design & Development in Plymouth, UK'; ?>
+    </title>
+
     <meta name="description"
         content="Plymouth-based web designer & developer creating fast, mobile-friendly websites for businesses. Custom solutions. 100% satisfaction guarantee.">
     <meta name="keywords"
         content="web design Plymouth, web developer Plymouth, responsive websites, UK web design, freelance web developer">
-    <!-- Open Graph / Facebook Meta Tags -->
+
+    <meta name="theme-color" content="#343434">
     <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_GB">
+
+    <?php
+        // Pobierz podstawowy URL
+        $canonicalUrl = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+
+        // Usuń parametry śledzenia (opcjonalne)
+        $paramsToRemove = ['utm_source', 'utm_medium', 'utm_campaign', 'fbclid', 'gclid'];
+        $canonicalUrl   = preg_replace('/\?(' . implode('|', $paramsToRemove) . ')=[^&]+(&|$)/', '?', $canonicalUrl);
+        $canonicalUrl   = str_replace('?&', '?', $canonicalUrl);
+        $canonicalUrl   = rtrim($canonicalUrl, '?');
+
+        // Usuń duplikaty ukośników
+        $canonicalUrl = preg_replace('/([^:])\/{2,}/', '$1/', $canonicalUrl);
+
+        // Wyświetl canonical
+        echo '<link rel="canonical" href="' . htmlspecialchars($canonicalUrl) . '" />';
+    ?>
     <meta property="og:url" content="https://maciejszelag.co.uk">
     <meta property="og:title" content="Maciej Szelag | Web Design & Development in Plymouth">
     <meta property="og:description"
@@ -35,19 +66,25 @@
         content="Plymouth web designer creating fast, responsive business websites with 100% satisfaction guarantee.">
     <meta name="twitter:image" content="https://maciejszelag.co.uk/images/social-preview.jpg">
 
-    <!-- Apple/Safari Meta Tags -->
+    <!-- Apple/Safari Meta Tags
     <meta name="apple-mobile-web-app-title" content="MS Web Design">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"> -->
 
-    <link rel="stylesheet" href="../css/style.min.css">
+    <link rel="stylesheet" href="<?php $cssPath;if (isset($cssPath)) {
+                                         echo "css/style.min.css";
+                                     } else {
+                                         echo "../css/style.min.css";
+                                 }
+                                 ?>">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Julius+Sans+One&display=swap"
         rel="stylesheet">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="images/favicons/apple-touch-icon.png">
+
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicons/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
@@ -86,81 +123,4 @@
         }
         </script>
 </head>
-
 <body>
-    <nav>
-        <div class="nav-wrap">
-            <div class="nav-logo">
-                <a href="#home" class="logo"><img src="images/MS=bg-logo 250x250.png"
-                        alt="Maciej Szelag Web Design Logo"></a>
-            </div>
-            <div class="nav-list">
-                <div class="nav-list-img">
-                    <img src="images/MS - logo 500x500 no bg.PNG" alt="MS Web Design Logo">
-                </div>
-                <ul class="nav-list-ul">
-                    <li><a href="#home" class="li-nav">Home</a></li>
-                    <li><a href="about/" class="li-nav">About Me</a></li>
-                    <li><a href="#contact" class="li-nav">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="nav-burger" id="nav-burger">
-            <div class="burger">menu</div>
-        </div>
-    </nav>
-    <!-- Preloader -->
-
-    <header class="sub-header-wrap">
-        <!-- <div class="bg-lines-wrap">
-            <div class="line"></div>
-            <div class="line line-1"></div>
-            <div class="line line-2"></div>
-        </div> -->
-        <div class="bg-img-head"></div>
-        <div class="page-title">
-            <h1>Let's Talk</h1>
-        </div>
-
-    </header>
-    <main>
-        <article>
-            <section class="section-about-offer">
-                <div class="offer-title animation-item">
-                    <p class="primary-font contact-p">Want to learn more? Reach out via email and let’s talk
-                        about your website!</p>
-                </div>
-                <div class="offer-content align-btn">
-                    <a href="mailto:webby.maciej@gmail.com" class="contact">webby.maciej@gmail.com</a>
-
-                </div>
-            </section>
-        </article>
-        <footer>
-            <div class="footer-wrap">
-                <div class="footer-box flex-center dispaly-screen">
-                    <img src="/images/MS - logo 500x500 no bg.PNG" alt="Maciej Szelag Web Design - Contact Information">
-                </div>
-                <div class="footer-box">
-                    <div class="footer-box-content border-line">
-                        <div class="f-box-content-section section-margin-bottom">
-                            <a href="about/">About</a>
-                            <a href="#contact">Contact</a>
-                        </div>
-                        <div class="f-box-content-section social-m">
-                            <a href="https://www.instagram.com/mswebdesignuk/?hl=en">Instagram</a>
-                            <a href="https://www.facebook.com/profile.php?id=61574904818271">Facebook</a>
-                            <a class="a-email" href="mailto:webby.maciej@gmail.com">info@maciejszelag.co.uk</a>
-                        </div>
-                    </div>
-                    <div class="footer-copyrights">
-                        <p>© 2025 Maciej Szelag - Web Design & Development Plymouth</p>
-                    </div>
-                </div>
-            </div>
-        </footer>
-    </main>
-    <script src="../js/main.js"></script>
-</body>
-
-</html>
