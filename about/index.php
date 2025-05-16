@@ -1,5 +1,6 @@
 <?php
-    $title = " About ";
+    $metaDescription = "Maciej Szelag – Web Developer in Plymouth | Custom-coded websites & apps with clean HTML, CSS, PHP. Human-centered design, mobile-first approach, and end-to-end support. Let's build something meaningful.";
+    $title           = " About ";
 
 include "../includes/head.php"?>
 <?php include "../includes/nav.php"?>

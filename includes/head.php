@@ -8,16 +8,10 @@
         include '../config/config.php'; // Relatywna ścieżka do pliku konfiguracyjnego
     }
 ?>
-
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://maciejszelag.co.uk">
-
     <!-- Authorship -->
     <meta name="author" content="Maciej Szelag">
     <meta name="robots" content="index, follow">
@@ -25,11 +19,7 @@
     <title>
         <?php echo 'Maciej Szelag |' . $title . '| Professional Web Design & Development in Plymouth, UK' ?? 'Maciej Szelag | Professional Web Design & Development in Plymouth, UK'; ?>
     </title>
-
-    <meta name="description"
-        content="Plymouth-based web designer & developer creating fast, mobile-friendly websites for businesses. Custom solutions. 100% satisfaction guarantee.">
-    <meta name="keywords"
-        content="web design Plymouth, web developer Plymouth, responsive websites, UK web design, freelance web developer">
+    <meta name="description" content="<?php echo $metaDescription ?? 'Plymouth-based web designer & developer creating fast, mobile-friendly websites for businesses. Custom solutions. 100% satisfaction guarantee.'; ?>">
 
     <meta name="theme-color" content="#343434">
     <meta property="og:type" content="website">
@@ -55,22 +45,7 @@
     <meta property="og:title" content="Maciej Szelag | Web Design & Development in Plymouth">
     <meta property="og:description"
         content="Professional web design services in Plymouth. Custom websites that convert visitors into customers.">
-    <meta property="og:image" content="https://maciejszelag.co.uk/images/social-preview.jpg">
-
-    <!-- Twitter Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@mswebdesignuk">
-    <meta name="twitter:creator" content="@mswebdesignuk">
-    <meta name="twitter:title" content="Maciej Szelag | Web Design & Development in Plymouth">
-    <meta name="twitter:description"
-        content="Plymouth web designer creating fast, responsive business websites with 100% satisfaction guarantee.">
-    <meta name="twitter:image" content="https://maciejszelag.co.uk/images/social-preview.jpg">
-
-    <!-- Apple/Safari Meta Tags
-    <meta name="apple-mobile-web-app-title" content="MS Web Design">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"> -->
-
+    <meta property="og:image" content="https://maciejszelag.co.uk/images/MS-bg-logo 250x250.png">
     <link rel="stylesheet" href="<?php $cssPath;if (isset($cssPath)) {
                                          echo "css/style.min.css";
                                      } else {

@@ -1,6 +1,6 @@
 <?php
-
-    $title = " Contact ";
+    $metaDescription = "Contact Maciej Szelag - Web Developer in Plymouth. Let's discuss your project! Get a free consultation for custom websites, Laravel apps, or UX-focused solutions. Fast response guaranteed.";
+    $title           = " Contact ";
 
 include "../includes/head.php"?>
 <?php include "../includes/nav.php"?>
